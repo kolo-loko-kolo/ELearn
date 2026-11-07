@@ -7,40 +7,46 @@ A distraction-free, mobile-first Progressive Web App (PWA) designed for serious 
 ## 🌟 Core Features
 
 ### 1. 🧠 Smart Vocabulary & SRS Flashcards (`/vocab/review` & `/vocab`)
-- **SuperMemo 2 (SM-2) Spaced Repetition**: Dynamic intervals (1d, 3d, 6d... based on quality ratings 1-4 and ease factors).
-- **3D Flip Flashcards**: Smooth interactive card flips with phonetic transcriptions, definitions, parts of speech, and bilingual examples.
-- **Keyboard Shortcuts**:
-  - <kbd>Space</kbd>: Flip card / Show answer
-  - <kbd>1</kbd>: Again (reset interval)
-  - <kbd>2</kbd>: Hard (+1.2x)
-  - <kbd>3</kbd>: Good (standard SM-2)
-  - <kbd>4</kbd>: Easy (+bonus interval)
-  - <kbd>R</kbd>: Replay pronunciation audio
-- **Celebration Effects**: Confetti on completing your daily review deck.
-- **Vocab Management**: Instant auto-fill lookup via Free Dictionary API and optional Gemini AI insights. Filter by tags (`#Daily`, `#Tech`, `#GRE`) and status (Due, Learning, Mastered).
+- **CET 3000 Core Vocabulary**: Preloaded with 3,000 high-frequency CET-4/6 core exam words with varied contextual examples.
+- **Optimized 3-Tier Spaced Repetition**:
+  - <kbd>1</kbd> **困难 (Hard)**: 1-day interval; routed to Home *Difficult Words Breakthrough* for targeted re-study.
+  - <kbd>2</kbd> **良好 (Good)**: Refreshes after at least 10 days.
+  - <kbd>3</kbd> **容易 (Easy)**: Refreshes after at least 100 days.
+- **Daily 20-Word Session**: Strictly 20 words per day (due reviews + date-hashed fresh words), with zero rollover overflow from skipped days.
+- **Dictation Test (单词默写测验)**: Reverse spelling challenge after deck completion to solidify active recall.
+- **3D Flip Flashcards & Audio**: Smooth card flip, phonetic notation, native US/UK audio playback.
 
-### 2. 📖 Context Reading & Word Mining (`/reader`)
-- Read curated articles or paste any English text.
-- **Click-to-Collect**: Tap any word in the text to inspect definitions and mine it directly into your SRS flashcards with 1-click.
-- Automatically preserves the surrounding sentence as the example context.
+### 2. 🎓 CET-4 & CET-6 Exam Prep & Daily Drills (`/cet`)
+- **Full Mock Exam**: Complete real exam papers from past 20 years (Listening, Reading, Translation) with authentic 710-score report and countdown timer. Limited to 1 test per week.
+- **Daily Targeted Drills (每日专项精炼)**: Refreshes every day with:
+  - 1 Full Listening Section (4 questions with audio playback & scripts)
+  - 2 In-depth Reading Passages (10 questions with detailed analysis)
+  - Chinese-to-English Translation Practice with key scoring point comparison.
 
-### 3. 🎙️ Shadowing & Pronunciation Trainer (`/practice`)
+### 3. 📖 Short Article Reader & Word Mining (`/reader`)
+- **50 Bilingual Curated Articles**: Full authentic library with 2 daily featured articles refreshed every morning.
+- **Listen to Article (听文章)**: Fluent, full-text speech synthesis with US/UK accent switching and instant stop/play controls.
+- **Bilingual Translation (文章释义)**: Toggle paragraph-by-paragraph Chinese translations on demand.
+- **Click-to-Collect**: Click any unfamiliar English word to view instant definitions and mine it directly into your SRS flashcard deck (matures in 10 days).
+
+### 4. 🎙️ Shadowing & Pronunciation Trainer (`/practice`)
 - Sentence-level shadowing practice:
-  1. **Listen**: Native text-to-speech with US/UK accent options and speed control (0.8x / 1.0x).
+  1. **Listen**: Native text-to-speech with US/UK accent options and speed control.
   2. **Speak**: Browser speech recognition (`webkitSpeechRecognition`).
-  3. **Feedback**: Real-time accuracy score (0-100%) and word-by-word visual breakdown (green for accurate words, red strike-through for missed/mispronounced words).
-- Includes conversational, business, tech, idiom sentences, and automatic loading of example sentences from your own vocabulary deck!
+  3. **Feedback**: Real-time accuracy score (0-100%) and word-by-word visual breakdown (green for accurate words, red strike-through for missed words).
+- Supports authentic spoken, business, technology expressions, and example sentences from your vocabulary.
 
-### 4. 📊 Habit & Progress Dashboard (`/`)
-- Daily goal progress bars (reviews due vs. completed, new words added).
-- Continuous habit streak tracker.
-- **GitHub-style Contribution Heatmap** representing review frequency across the past 16 weeks.
+### 5. 📊 Habit & Progress Dashboard (`/`)
+- **Accumulated Study Days (累计学习天数)**: Tracks days where daily study progress $\ge 50\%$; never resets on skipped days.
+- **Vocabulary Mastery Stats**: Real-time counts for *Total Words*, *Due Today*, *Reviewed (已复习)*, and *Multi-Reviewed (多次复习 $\ge 3$次)*.
+- **Difficult Words Breakthrough (困难词汇重点攻坚)**: Pinpoints struggling words; completing a restudy automatically promotes them to "良好".
+- **GitHub-style Contribution Heatmap**: Tracks study consistency across the past 16 weeks.
 
-### 5. ⚙️ Settings & Data Safety (`/settings`)
-- **Offline-First & Local Storage**: Everything is stored in your browser's IndexedDB via Dexie. Zero backend required.
+### 6. ⚙️ Settings & Data Safety (`/settings`)
+- **Dark / Light Theme**: Seamless toggle between Dark, Light, and System modes.
+- **Offline-First & Local Storage**: IndexedDB via Dexie. Zero backend required, 100% private.
 - **JSON Backup / Restore**: 1-click export and import of your entire dictionary, review history, and articles.
 - **Voice Preferences**: Toggle between US and UK accents, adjust speech rate.
-- **Optional Gemini API**: Provide your Google Gemini API key for root etymology breakdown, mnemonics, and natural collocations.
 
 ---
 
